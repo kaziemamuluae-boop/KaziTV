@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Cloud IPTV Player</title>
+    <!-- Video.js CSS -->
+    <link href="https://vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet" />
+    <style>
+        body { background-color: #000; color: #fff; text-align: center; font-family: Arial, sans-serif; }
+        .video-container { width: 80%; margin: 50px auto; }
+        video { width: 100%; border: 2px solid #333; }
+        h1 { margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+    <h1>আমার আইপি টিভি প্লেয়ার</h1>
+    
+    <div class="video-container">
+        <video id="my-video" class="video-js vjs-default-skin vjs-big-play-centered" controls preload="auto" data-setup='{}'>
+            <!-- নিচে আপনার M3U8 স্ট্রিমিং লিঙ্কটি দিন -->
+            <source src="আপনার_চ্যানেল_লিঙ্ক_এখানে_দিন.m3u8" type="application/x-mpegURL">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Video.js JS -->
+    <script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
+</body>
+</html>
