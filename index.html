@@ -2,10 +2,11 @@
 <html lang="bn">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- জুম বন্ধ করার জন্য Meta Tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Live Arena - Kazi TV</title>
     
-    <!-- React এবং Babel (JSX কনভার্টার) -->
+    <!-- React এবং Babel -->
     <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -14,17 +15,33 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Bebas+Neue&display=swap" rel="stylesheet">
 
     <style>
-        /* অ্যানিমেশন এবং বেসিক রিসেট */
+        /* কপি এবং সিলেকশন বন্ধ করার জন্য CSS */
+        * { 
+            box-sizing: border-box; 
+            margin: 0; 
+            padding: 0; 
+            /* লেখা সিলেক্ট করা বন্ধ করবে */
+            -webkit-user-select: none; /* Safari */
+            -moz-user-select: none;    /* Firefox */
+            -ms-user-select: none;     /* IE/Edge */
+            user-select: none;         /* Standard */
+            /* মোবাইল ব্রাউজারে ট্যাপ করে ধরে রাখা (Context Menu) বন্ধ করবে */
+            -webkit-touch-callout: none; 
+        }
+
+        body { 
+            background: #0b0e14; 
+            /* মোবাইল স্ক্রিনে জুম-ইন হওয়া আটকাবে */
+            touch-action: manipulation; 
+            overscroll-behavior: none;
+        }
+
         @keyframes blink { 
             0%, 100% { opacity: 1; transform: scale(1); } 
             50% { opacity: .4; transform: scale(.8); } 
         }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { background: #0b0e14; }
         
-        /* স্ক্রলবার হাইড করার জন্য (ঐচ্ছিক) */
-        ::-webkit-scrollbar { width: 5px; }
-        ::-webkit-scrollbar-thumb { background: #1e2c42; border-radius: 10px; }
+        ::-webkit-scrollbar { width: 0px; display: none; } /* স্ক্রলবার হাইড */
     </style>
 </head>
 <body>
@@ -34,6 +51,7 @@
     <script type="text/babel">
         const { useState, useEffect } = React;
 
+        // আপনার ম্যাচের ডেটা (আগের মতোই)
         const matches = [
           { id:1, sport:"cricket",  live:true,  league:"Bangladesh Premier League",   type:"Cricket | T20",    home:{abbr:"CCB", name:"Comilla"},    away:{abbr:"RNG", name:"Rangpur"}    },
           { id:2, sport:"cricket",  live:false, league:"Indian Premier League 2026",  type:"Cricket | T20",    home:{abbr:"MI",  name:"Mumbai"},     away:{abbr:"RCB", name:"Bangalore"}, minsFrom:22 },
@@ -210,7 +228,6 @@
                 fontFamily:"'DM Sans',sans-serif", color:"#dde6f5",
             }}>
                 <div style={{maxWidth:480, margin:"0 auto"}}>
-                  {/* Sticky Header */}
                   <div style={{
                       display:"flex", alignItems:"center", justifyContent:"space-between", 
                       marginBottom:28, position:"sticky", top:0, zIndex:100, 
@@ -225,7 +242,6 @@
                     <Clock />
                   </div>
 
-                  {/* Live Section */}
                   {live.length > 0 && (
                     <React.Fragment>
                         <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:12}}>
@@ -237,7 +253,6 @@
                     </React.Fragment>
                   )}
 
-                  {/* Upcoming Section */}
                   {sched.length > 0 && (
                     <React.Fragment>
                         <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:12,marginTop:24}}>
