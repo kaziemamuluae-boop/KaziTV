@@ -2,270 +2,129 @@
 <html lang="bn">
 <head>
     <meta charset="UTF-8">
-    <!-- জুম বন্ধ করার জন্য Meta Tag -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Live Arena - Kazi TV</title>
     
-    <!-- React এবং Babel -->
     <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Bebas+Neue&display=swap" rel="stylesheet">
 
     <style>
-        /* কপি এবং সিলেকশন বন্ধ করার জন্য CSS */
         * { 
-            box-sizing: border-box; 
-            margin: 0; 
-            padding: 0; 
-            /* লেখা সিলেক্ট করা বন্ধ করবে */
-            -webkit-user-select: none; /* Safari */
-            -moz-user-select: none;    /* Firefox */
-            -ms-user-select: none;     /* IE/Edge */
-            user-select: none;         /* Standard */
-            /* মোবাইল ব্রাউজারে ট্যাপ করে ধরে রাখা (Context Menu) বন্ধ করবে */
+            box-sizing: border-box; margin: 0; padding: 0; 
+            -webkit-user-select: none; user-select: none; 
             -webkit-touch-callout: none; 
         }
+        body { background: #0b0e14; font-family: 'DM Sans', sans-serif; }
+        @keyframes blink { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: .4; transform: scale(.8); } }
+        ::-webkit-scrollbar { display: none; }
 
-        body { 
-            background: #0b0e14; 
-            /* মোবাইল স্ক্রিনে জুম-ইন হওয়া আটকাবে */
-            touch-action: manipulation; 
-            overscroll-behavior: none;
+        .card {
+            background: #131a28;
+            border-radius: 16px;
+            padding: 16px;
+            margin-top: 15px;
+            border: 1px solid #1e2c42;
+            position: relative;
+            overflow: hidden;
         }
-
-        @keyframes blink { 
-            0%, 100% { opacity: 1; transform: scale(1); } 
-            50% { opacity: .4; transform: scale(.8); } 
+        .live-border { border: 1px solid #ff406066; }
+        .match-info-bar {
+            display: flex;
+            justify-content: space-between;
+            background: rgba(255, 255, 255, 0.03);
+            margin: 12px -16px -16px -16px;
+            padding: 10px 16px;
+            border-top: 1px solid #1e2c42;
+            font-size: 11px;
+            color: #5a6a85;
         }
-        
-        ::-webkit-scrollbar { width: 0px; display: none; } /* স্ক্রলবার হাইড */
     </style>
 </head>
 <body>
-
     <div id="root"></div>
 
     <script type="text/babel">
         const { useState, useEffect } = React;
 
-        // আপনার ম্যাচের ডেটা (আগের মতোই)
-        const matches = [
-          { id:1, sport:"cricket",  live:true,  league:"Bangladesh Premier League",   type:"Cricket | T20",    home:{abbr:"CCB", name:"Comilla"},    away:{abbr:"RNG", name:"Rangpur"}    },
-          { id:2, sport:"cricket",  live:false, league:"Indian Premier League 2026",  type:"Cricket | T20",    home:{abbr:"MI",  name:"Mumbai"},     away:{abbr:"RCB", name:"Bangalore"}, minsFrom:22 },
-          { id:3, sport:"cricket",  live:false, league:"ICC T20 World Cup 2026",      type:"Cricket | T20I",   home:{abbr:"BAN", name:"Bangladesh"}, away:{abbr:"PAK", name:"Pakistan"},  minsFrom:90 },
-          { id:4, sport:"football", live:true,  league:"UEFA Champions League",       type:"Football | Final", home:{abbr:"RMA", name:"Madrid"},     away:{abbr:"BAY", name:"Bayern"}     },
-          { id:5, sport:"football", live:false, league:"English Premier League",      type:"Football | MW38",  home:{abbr:"MCI", name:"Man City"},   away:{abbr:"ARS", name:"Arsenal"},   minsFrom:180 },
-          { id:6, sport:"cricket",  live:false, league:"ICC T20 World Cup 2026",      type:"Cricket | T20I",   home:{abbr:"IND", name:"India"},      away:{abbr:"AUS", name:"Australia"}, minsFrom:300 },
-        ];
-
         const pad = n => String(n).padStart(2,"0");
 
-        function getTarget(m) {
-          if (!m.minsFrom) return null;
-          return new Date(Date.now() + m.minsFrom * 60000);
-        }
-
-        function fmtTime(d) { return `${pad(d.getHours())}:${pad(d.getMinutes())}`; }
-        function fmtDate(d) {
-          const D=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
-          const M=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
-          return `${D[d.getDay()]} ${d.getDate()} ${M[d.getMonth()]}`;
-        }
-
-        function useTick() {
-          const [, set] = useState(0);
-          useEffect(() => { const t = setInterval(() => set(x=>x+1), 1000); return ()=>clearInterval(t); }, []);
-        }
-
         function LiveDot() {
-          return (
-            <div style={{display:"flex",alignItems:"center",gap:6,background:"rgba(255,64,96,.12)",border:"1px solid rgba(255,64,96,.45)",borderRadius:50,padding:"5px 11px"}}>
-              <div style={{
-                width:7,height:7,borderRadius:"50%",background:"#ff4060",
-                boxShadow:"0 0 6px #ff4060",
-                animation:"blink 1s ease-in-out infinite"
-              }}/>
-              <span style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:14,letterSpacing:2,color:"#ff4060"}}>LIVE</span>
-            </div>
-          );
-        }
-
-        function Center({ m }) {
-          useTick();
-          if (m.live) return <LiveDot />;
-
-          const target = getTarget(m);
-          if (!target) return (
-            <div style={{display:"flex",flexDirection:"column",alignItems:"center",gap:4}}>
-              <div style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:16,letterSpacing:3,color:"#2a3550"}}>VS</div>
-              <div style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:20,letterSpacing:2,color:"#3b9eff"}}>TBD</div>
-            </div>
-          );
-
-          const diff = target - Date.now();
-          if (diff <= 0) return <LiveDot />;
-
-          const total = diff / 1000;
-          const h = Math.floor(total / 3600);
-          const mn = Math.floor((total % 3600) / 60);
-          const s = Math.floor(total % 60);
-          const under30 = total < 30 * 60;
-          const soon = total < 5 * 60;
-
-          if (under30) {
-            const str = h > 0 ? `${pad(h)}:${pad(mn)}:${pad(s)}` : `${pad(mn)}:${pad(s)}`;
             return (
-              <div style={{display:"flex",flexDirection:"column",alignItems:"center",gap:3}}>
-                <div style={{fontSize:9,color:"#5a6a85",letterSpacing:2,textTransform:"uppercase"}}>শুরু হবে</div>
-                <div style={{
-                  fontFamily:"'Bebas Neue',sans-serif",fontSize:22,letterSpacing:2,lineHeight:1,
-                  color: soon ? "#ff4060" : "#f5c842",
-                  textShadow: soon ? "0 0 16px rgba(255,64,96,.7)" : "0 0 14px rgba(245,200,66,.5)"
-                }}>{str}</div>
-              </div>
+                <div style={{display:"flex",alignItems:"center",gap:6,background:"rgba(255,64,96,.12)",border:"1px solid rgba(255,64,96,.45)",borderRadius:50,padding:"4px 10px"}}>
+                    <div style={{width:6,height:6,borderRadius:"50%",background:"#ff4060",boxShadow:"0 0 6px #ff4060",animation:"blink 1s infinite"}}/>
+                    <span style={{fontFamily:"'Bebas Neue'",fontSize:13,letterSpacing:2,color:"#ff4060"}}>LIVE</span>
+                </div>
             );
-          }
-
-          return (
-            <div style={{display:"flex",flexDirection:"column",alignItems:"center",gap:4}}>
-              <div style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:16,letterSpacing:3,color:"#2a3550"}}>VS</div>
-              <div style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:20,letterSpacing:2,color:"#3b9eff",lineHeight:1}}>{fmtTime(target)}</div>
-              <div style={{fontSize:10,color:"#5a6a85",letterSpacing:.5}}>{fmtDate(target)}</div>
-            </div>
-          );
         }
 
         function TeamBlock({ team, sport }) {
-          const color = sport === "cricket" ? "#00b4d8" : "#f72585";
-          const bg    = sport === "cricket" ? "rgba(0,180,216,.12)" : "rgba(247,37,133,.12)";
-          const bdr   = sport === "cricket" ? "rgba(0,180,216,.3)"  : "rgba(247,37,133,.3)";
-          return (
-            <div style={{ display:"flex", flexDirection:"column", alignItems:"center", gap:8 }}>
-              <div style={{
-                width:48,height:48,borderRadius:"50%",
-                background:bg, border:`1.5px solid ${bdr}`,
-                display:"flex",alignItems:"center",justifyContent:"center",
-                fontFamily:"'Bebas Neue',sans-serif",fontSize:13,letterSpacing:.5,
-                color:color, flexShrink:0,
-              }}>
-                {team.abbr}
-              </div>
-              <div style={{
-                fontSize:12,fontWeight:600,color:"#dde6f5",
-                textAlign:"center",lineHeight:1.2,maxWidth:80,
-              }}>
-                {team.name}
-              </div>
-            </div>
-          );
-        }
-
-        function MatchCard({ m }) {
-          const stripe = m.sport === "cricket" ? "#00b4d8" : "#f72585";
-          return (
-            <div style={{
-              background:"#131a28",
-              border: m.live ? "1px solid rgba(255,64,96,.4)" : "1px solid #1e2c42",
-              borderRadius:14,
-              overflow:"hidden",
-              marginBottom:10,
-              position:"relative",
-            }}>
-              <div style={{position:"absolute",left:0,top:0,bottom:0,width:3,background:stripe,borderRadius:"14px 0 0 14px"}}/>
-              <div style={{
-                display:"flex",alignItems:"center",justifyContent:"space-between",gap:8,
-                padding:"9px 16px 9px 20px",
-                borderBottom:"1px solid #1e2c42",
-              }}>
-                <div style={{fontSize:11,fontWeight:600,letterSpacing:1.2,textTransform:"uppercase",color:"#9aafc8",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>
-                  {m.league}
+            const color = sport === "cricket" ? "#00b4d8" : "#f72585";
+            return (
+                <div style={{display:"flex",flexDirection:"column",alignItems:"center",gap:6}}>
+                    <div style={{width:44,height:44,borderRadius:"50%",background:"#1c2638",border:`1px solid ${color}44`,display:"flex",alignItems:"center",justifyContent:"center",color:color,fontFamily:"'Bebas Neue'",fontSize:14}}>{team.abbr}</div>
+                    <div style={{fontSize:11,fontWeight:600,color:"#dde6f5",textAlign:"center",maxWidth:80}}>{team.name}</div>
                 </div>
-                <div style={{fontSize:10,color:"#7a8fa8",letterSpacing:.5,flexShrink:0}}>
-                  {m.sport==="cricket"?"🏏":"⚽"} {m.type}
-                </div>
-              </div>
-              <div style={{
-                display:"grid",
-                gridTemplateColumns:"1fr auto 1fr",
-                alignItems:"center",
-                gap:12,
-                padding:"16px 16px 16px 20px",
-              }}>
-                <TeamBlock team={m.home} sport={m.sport} />
-                <div style={{display:"flex",flexDirection:"column",alignItems:"center",flexShrink:0}}>
-                  <Center m={m} />
-                </div>
-                <TeamBlock team={m.away} sport={m.sport} />
-              </div>
-            </div>
-          );
-        }
-
-        function Clock() {
-          useTick();
-          const n = new Date();
-          return (
-            <div style={{textAlign:"right"}}>
-              <div style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:22,color:"#3b9eff",letterSpacing:2}}>
-                {pad(n.getHours())}:{pad(n.getMinutes())}:{pad(n.getSeconds())}
-              </div>
-              <div style={{fontSize:11,color:"#5a6a85",letterSpacing:1,marginTop:2}}>{fmtDate(n)}</div>
-            </div>
-          );
+            );
         }
 
         function App() {
-          const live  = matches.filter(m => m.live);
-          const sched = matches.filter(m => !m.live);
+            const [matches, setMatches] = useState([]);
+            const [loading, setLoading] = useState(true);
+            const [now, setNow] = useState(new Date());
 
-          return (
-            <div style={{
-                background:"#0b0e14", minHeight:"100vh",
-                padding:"0 16px 60px",
-                fontFamily:"'DM Sans',sans-serif", color:"#dde6f5",
-            }}>
-                <div style={{maxWidth:480, margin:"0 auto"}}>
-                  <div style={{
-                      display:"flex", alignItems:"center", justifyContent:"space-between", 
-                      marginBottom:28, position:"sticky", top:0, zIndex:100, 
-                      background:"#0b0e14", padding:"20px 0 12px", 
-                      borderBottom:"1px solid #1e2c42"
-                  }}>
-                    <div style={{
-                      fontFamily:"'Bebas Neue',sans-serif", fontSize:26, letterSpacing:4,
-                      background:"linear-gradient(90deg,#3b9eff,#a78bfa)",
-                      WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent", backgroundClip:"text",
-                    }}>LIVE ARENA</div>
-                    <Clock />
-                  </div>
+            useEffect(() => {
+                fetch('tv.json')
+                    .then(res => res.json())
+                    .then(data => { setMatches(data); setLoading(false); })
+                    .catch(err => console.error(err));
+                
+                const timer = setInterval(() => setNow(new Date()), 1000);
+                return () => clearInterval(timer);
+            }, []);
 
-                  {live.length > 0 && (
-                    <React.Fragment>
-                        <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:12}}>
-                          <div style={{width:7,height:7,borderRadius:"50%",background:"#ff4060",boxShadow:"0 0 8px #ff4060"}}/>
-                          <div style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:13,letterSpacing:3,color:"#5a6a85"}}>লাইভ ম্যাচ</div>
-                          <div style={{flex:1,height:1,background:"linear-gradient(90deg,#1e2c42,transparent)"}}/>
+            if (loading) return <div style={{color:'#5a6a85',textAlign:'center',marginTop:'50px'}}>লোড হচ্ছে...</div>;
+
+            return (
+                <div style={{padding:"0 16px 60px"}}>
+                    <div style={{maxWidth:480, margin:"0 auto"}}>
+                        
+                        {/* Header */}
+                        <div style={{display:"flex", alignItems:"center", justifyContent:"space-between", position:"sticky", top:0, background:"#0b0e14", padding:"20px 0 12px", borderBottom:"1px solid #1e2c42", zIndex:100, marginBottom:10}}>
+                            <div style={{fontFamily:"'Bebas Neue'", fontSize:26, letterSpacing:4, background:"linear-gradient(90deg,#3b9eff,#a78bfa)", WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent"}}>LIVE ARENA</div>
+                            <div style={{fontFamily:"'Bebas Neue'", fontSize:20, color:"#3b9eff"}}>{pad(now.getHours())}:{pad(now.getMinutes())}:{pad(now.getSeconds())}</div>
                         </div>
-                        {live.map(m => <MatchCard key={m.id} m={m} />)}
-                    </React.Fragment>
-                  )}
 
-                  {sched.length > 0 && (
-                    <React.Fragment>
-                        <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:12,marginTop:24}}>
-                          <div style={{width:7,height:7,borderRadius:"50%",background:"#f5c842",boxShadow:"0 0 8px #f5c842"}}/>
-                          <div style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:13,letterSpacing:3,color:"#5a6a85"}}>আসছে ম্যাচ</div>
-                          <div style={{flex:1,height:1,background:"linear-gradient(90deg,#1e2c42,transparent)"}}/>
-                        </div>
-                        {sched.map(m => <MatchCard key={m.id} m={m} />)}
-                    </React.Fragment>
-                  )}
+                        {matches.map(m => (
+                            <div key={m.id} className={`card ${m.live ? 'live-border' : ''}`}>
+                                {/* Top Bar */}
+                                <div style={{display:"flex", justifyContent:"space-between", marginBottom:12, fontSize:10, textTransform:"uppercase", color:"#5a6a85", fontWeight:700, letterSpacing:1}}>
+                                    <span>{m.league}</span>
+                                    <span style={{color: m.sport==='cricket'?'#00b4d8':'#f72585'}}>{m.type}</span>
+                                </div>
+
+                                {/* Match Content */}
+                                <div style={{display:"grid", gridTemplateColumns:"1fr auto 1fr", alignItems:"center", gap:10}}>
+                                    <TeamBlock team={m.home} sport={m.sport} />
+                                    <div style={{textAlign:"center"}}>
+                                        {m.live ? <LiveDot /> : <div style={{fontFamily:"'Bebas Neue'", fontSize:18, color:"#2a3550"}}>VS</div>}
+                                    </div>
+                                    <TeamBlock team={m.away} sport={m.sport} />
+                                </div>
+
+                                {/* Match Bottom Info Bar (New) */}
+                                <div className="match-info-bar">
+                                    <span>📅 {m.date}</span>
+                                    <span>⏰ {m.startTime} - {m.endTime}</span>
+                                    <span style={{color:"#3b9eff"}}>⏳ {m.duration}</span>
+                                </div>
+                            </div>
+                        ))}
+
+                    </div>
                 </div>
-            </div>
-          );
+            );
         }
 
         const root = ReactDOM.createRoot(document.getElementById('root'));
