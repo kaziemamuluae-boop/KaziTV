@@ -1,26 +1,74 @@
 [
   {
     "name": "আইন-শৃঙ্খলা ও নিরাপত্তা",
-    "id": "https://kazi-tv.vercel.app/Emergency/EmergencyNumber.json"
+    "id": "https://kazi-tv.vercel.app/Emergency/LawAndSecurity.json"
   },
   {
-    "name": "পুলিশ",
-    "id": "৯৯৯"
+    "name": "জাতীয় জরুরি সেবা",
+    "id": "https://kazi-tv.vercel.app/Emergency/NationalEmergency.json"
   },
   {
-    "name": "হাইওয়ে পুলিশ",
-    "id": "০১৩২০-০০৫৯৯৯"
+    "name": "স্বাস্থ্যসেবা ও হাসপাতাল",
+    "id": "https://kazi-tv.vercel.app/Emergency/HealthAndHospital.json"
   },
   {
-    "name": "র‍্যাব",
-    "id": "০১৭৭৭-৭০০১০০"
+    "name": "অ্যাম্বুলেন্স সেবা",
+    "id": "https://kazi-tv.vercel.app/Emergency/Ambulance.json"
   },
   {
-    "name": "আনসার ও গ্রাম প্রতিরক্ষা বাহিনী",
-    "id": "০১৭২৯-০৬০১০১"
+    "name": "ফায়ার সার্ভিস ও উদ্ধার",
+    "id": "https://kazi-tv.vercel.app/Emergency/FireService.json"
   },
   {
-    "name": "কোস্ট গার্ড",
-    "id": "০১৭৫৪-৮০৮৯০৯"
+    "name": "বিদ্যুৎ সেবা",
+    "id": "https://kazi-tv.vercel.app/Emergency/Electricity.json"
+  },
+  {
+    "name": "পানি ও স্যানিটেশন",
+    "id": "https://kazi-tv.vercel.app/Emergency/WaterAndSanitation.json"
+  },
+  {
+    "name": "গ্যাস সেবা",
+    "id": "https://kazi-tv.vercel.app/Emergency/GasService.json"
+  },
+  {
+    "name": "সরকারি অফিস",
+    "id": "https://kazi-tv.vercel.app/Emergency/GovernmentOffice.json"
+  },
+  {
+    "name": "নারী ও শিশু সহায়তা",
+    "id": "https://kazi-tv.vercel.app/Emergency/WomenAndChildren.json"
+  },
+  {
+    "name": "আইনি সহায়তা",
+    "id": "https://kazi-tv.vercel.app/Emergency/LegalSupport.json"
+  },
+  {
+    "name": "দুর্যোগ ব্যবস্থাপনা",
+    "id": "https://kazi-tv.vercel.app/Emergency/DisasterManagement.json"
+  },
+  {
+    "name": "রক্তদান ও ব্লাড ব্যাংক",
+    "id": "https://kazi-tv.vercel.app/Emergency/BloodBank.json"
+  },
+  {
+    "name": "কৃষি সেবা",
+    "id": "https://kazi-tv.vercel.app/Emergency/Agriculture.json"
+  },
+  {
+    "name": "প্রাণিসম্পদ ও ভেটেরিনারি",
+    "id": "https://kazi-tv.vercel.app/Emergency/Veterinary.json"
+  },
+  {
+    "name": "সামাজিক সেবা ও এনজিও",
+    "id": "https://kazi-tv.vercel.app/Emergency/SocialService.json"
+  },
+  {
+    "name": "গুরুত্বপূর্ণ হেল্পলাইন",
+    "id": "https://kazi-tv.vercel.app/Emergency/ImportantHelpline.json"
+  },
+  {
+    "name": "উপজেলা ভিত্তিক জরুরি নম্বর",
+    "id": "https://kazi-tv.vercel.app/Emergency/UpazilaEmergency.json"
   }
 ]
