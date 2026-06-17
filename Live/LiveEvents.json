@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "teamALogo": "https://example.com/teamA.png",
+    "teamAName": "Team A",
+    "teamBLogo": "https://example.com/teamB.png",
+    "teamBName": "Team B",
+    "startTime": 1718632800000,
+    "endTime": 1718640000000,
+    "type": "Cricket",
+    "url": "https://example.com/live_stream_url",
+    "extra": "Live Now",
+    "server": "Server 1",
+    "published": 1,
+    "tournament_name": "T20 World Cup",
+    "link_id": "link_001"
+  },
+  {
+    "id": 2,
+    "teamALogo": "https://example.com/teamC.png",
+    "teamAName": "Team C",
+    "teamBLogo": "https://example.com/teamD.png",
+    "teamBName": "Team D",
+    "startTime": 1718719200000,
+    "endTime": 1718726400000,
+    "type": "Football",
+    "url": "https://example.com/live_stream_url_2",
+    "extra": "Upcoming",
+    "server": "Server 2",
+    "published": 1,
+    "tournament_name": "Euro 2024",
+    "link_id": "link_002"
+  }
+]
