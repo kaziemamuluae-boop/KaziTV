@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "title": "Sports",
+    "image": "https://example.com/sports_icon.png",
+    "link_id": "cat_sports",
+    "published": 1
+  },
+  {
+    "id": 2,
+    "title": "Entertainment",
+    "image": "https://example.com/entertainment_icon.png",
+    "link_id": "cat_ent",
+    "published": 1
+  },
+  {
+    "id": 3,
+    "title": "News",
+    "image": "https://example.com/news_icon.png",
+    "link_id": "cat_news",
+    "published": 1
+  },
+  {
+    "id": 4,
+    "title": "Movies",
+    "image": "https://example.com/movies_icon.png",
+    "link_id": "cat_movies",
+    "published": 1
+  }
+]
