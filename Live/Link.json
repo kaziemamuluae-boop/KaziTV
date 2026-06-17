@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "category": "sports",
+    "title": "Stream 1",
+    "url": "https://example.com/stream1.m3u8",
+    "type": "m3u8",
+    "drm": "",
+    "refer": ""
+  },
+  {
+    "id": 2,
+    "category": "movies",
+    "title": "Stream 2",
+    "url": "https://example.com/stream2.mpd",
+    "type": "dash",
+    "drm": "widevine",
+    "refer": "https://example.com"
+  }
+]
