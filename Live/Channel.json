@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "category_id": "1",
+    "title": "Star Sports 1",
+    "image": "https://example.com/starsports1.png",
+    "published": "1",
+    "link_id": "ch_001"
+  },
+  {
+    "id": 2,
+    "category_id": "1",
+    "title": "Sony Ten 1",
+    "image": "https://example.com/sonyten1.png",
+    "published": "1",
+    "link_id": "ch_002"
+  },
+  {
+    "id": 3,
+    "category_id": "3",
+    "title": "BBC News",
+    "image": "https://example.com/bbcnews.png",
+    "published": "1",
+    "link_id": "ch_003"
+  }
+]
