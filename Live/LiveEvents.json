@@ -1,53 +1,71 @@
-{
-  "events": [
-    {
-      "id": "1",
-      "team1": "Argentinaa",
-      "team1_flag": "🇦🇷",
-      "team2": "Brazil",
-      "team2_flag": "🇧🇷",
-      "status": "LIVE",
-      "time": "",
-      "day": "",
-      "category": "Football",
-      "league": "World Cup",
-      "round": "Final",
-      "streams": [
-        {"quality": "FHD", "label": "HD Quality", "url": "https://example.com/stream1"},
-        {"quality": "HD", "label": "Medium Quality", "url": "https://example.com/stream2"},
-        {"quality": "SD", "label": "Mobile Quality", "url": "https://example.com/stream3"}
-      ]
-    },
-    {
-      "id": "2",
-      "team1": "India",
-      "team1_flag": "🇮🇳",
-      "team2": "Pakistan",
-      "team2_flag": "🇵🇰",
-      "status": "LIVE",
-      "time": "",
-      "day": "",
-      "category": "Cricket",
-      "league": "Asia Cup",
-      "round": "Semi Final",
-      "streams": [
-        {"quality": "FHD", "label": "HD Quality", "url": "https://example.com/stream1"},
-        {"quality": "HD", "label": "Medium Quality", "url": "https://example.com/stream2"}
-      ]
-    },
-    {
-      "id": "3",
-      "team1": "France",
-      "team1_flag": "🇫🇷",
-      "team2": "Germany",
-      "team2_flag": "🇩🇪",
-      "status": "TODAY",
-      "time": "20:00",
-      "day": "TODAY",
-      "category": "Football",
-      "league": "Euro 2024",
-      "round": "Group Stage",
-      "streams": []
-    }
-  ]
-}
+[
+  {
+    "id": "1",
+    "team1": "Argentinaa",
+    "team1_flag": "🇦🇷",
+    "team2": "Brazill",
+    "team2_flag": "🇧🇷",
+    "status": "LIVE",
+    "date": "",
+    "time": "",
+    "category": "Football",
+    "league": "World Cup",
+    "round": "Final",
+    "streams": [
+      {
+        "quality": "FHD",
+        "label": "HD Quality",
+        "url": "https://example.com/stream1"
+      },
+      {
+        "quality": "HD",
+        "label": "Medium Quality",
+        "url": "https://example.com/stream2"
+      },
+      {
+        "quality": "SD",
+        "label": "Mobile Quality",
+        "url": "https://example.com/stream3"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "team1": "India",
+    "team1_flag": "🇮🇳",
+    "team2": "Pakistan",
+    "team2_flag": "🇵🇰",
+    "status": "LIVE",
+    "time": "",
+    "day": "",
+    "category": "Cricket",
+    "league": "Asia Cup",
+    "round": "Semi Final",
+    "streams": [
+      {
+        "quality": "FHD",
+        "label": "HD Quality",
+        "url": "https://example.com/stream1"
+      },
+      {
+        "quality": "HD",
+        "label": "Medium Quality",
+        "url": "https://example.com/stream2"
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "team1": "France",
+    "team1_flag": "🇫🇷",
+    "team2": "Germany",
+    "team2_flag": "🇩🇪",
+    "status": "TODAY",
+    "time": "20:00",
+    "day": "TODAY",
+    "category": "Football",
+    "league": "Euro 2024",
+    "round": "Group Stage",
+    "streams": []
+  }
+]
