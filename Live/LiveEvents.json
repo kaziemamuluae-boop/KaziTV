@@ -30,31 +30,6 @@
     ]
   },
   {
-    "id": "2",
-    "team1": "India",
-    "team1_flag": "🇮🇳",
-    "team2": "Pakistan",
-    "team2_flag": "🇵🇰",
-    "status": "LIVE",
-    "time": "",
-    "day": "",
-    "category": "Cricket",
-    "league": "Asia Cup",
-    "round": "Semi Final",
-    "streams": [
-      {
-        "quality": "FHD",
-        "label": "HD Quality",
-        "url": "https://example.com/stream1"
-      },
-      {
-        "quality": "HD",
-        "label": "Medium Quality",
-        "url": "https://example.com/stream2"
-      }
-    ]
-  },
-  {
     "id": "3",
     "team1": "France",
     "team1_flag": "🇫🇷",
