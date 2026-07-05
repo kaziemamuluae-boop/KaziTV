@@ -75,6 +75,12 @@
     "category": "Football",
     "league": "Boxing Gloves",
     "round": "N/A",
-    "streams": []
+    "streams": [
+      {
+        "quality": "FHD",
+        "label": "Deshe Bideshe",
+        "url": "https://dbcanada.sonarbanglatv.com/deshebideshe/dbtv/index.m3u8"
+      }
+    ]
   }
 ]
