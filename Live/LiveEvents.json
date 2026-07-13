@@ -1,25 +1,5 @@
 [
   {
-    "id": "14",
-    "team1": "France",
-    "team1_flag": "🇫🇷",
-    "team2": "Germany",
-    "team2_flag": "🇩🇪",
-    "date": "",
-    "time": "20:00",
-    "category": "Football",
-    "league": "Euro 2024",
-    "round": "Group Stage",
-    "status": "LIVE",
-    "streams": [
-      {
-        "quality": "HD",
-        "label": "Global TV",
-        "url": "https:\/\/us170.jagobd.com:447\/c3VydmVyX8RpbEU9Mi8xNy8yMDE0GIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PTOmdFsaWRtaW51aiPhnPTI\/asian-test-sample-ok-d.stream\/playlist.m3u8?checkedby:iptvcat.com"
-      }
-    ]
-  },
-  {
     "id": "15",
     "team1": "Brazil",
     "team1_flag": "🇧🇷",
