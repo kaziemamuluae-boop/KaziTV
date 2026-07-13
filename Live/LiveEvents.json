@@ -21,6 +21,11 @@
         "quality": "HD",
         "label": "Deepto TV",
         "url": "https:\/\/byphdgllyk.gpcdn.net\/hls\/deeptotv\/index.m3u8"
+      },
+      {
+        "quality": "FHD",
+        "label": "Movie Bangla",
+        "url": "http:\/\/alvetv.com\/moviebanglatv\/8080\/index.m3u8"
       }
     ]
   }
