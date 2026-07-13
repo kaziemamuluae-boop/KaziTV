@@ -16,6 +16,11 @@
         "quality": "FHD",
         "label": "Bangladesh ",
         "url": "https:\/\/stream.channeleuropetvboxlondon.co.uk\/live\/channeleurope\/chunklist_w572284654.m3u8"
+      },
+      {
+        "quality": "HD",
+        "label": "Deepto TV",
+        "url": "https:\/\/byphdgllyk.gpcdn.net\/hls\/deeptotv\/index.m3u8"
       }
     ]
   }
