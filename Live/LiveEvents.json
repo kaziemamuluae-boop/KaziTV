@@ -1,35 +1,5 @@
 [
   {
-    "id": "13",
-    "team1": "Argentinaa",
-    "team1_flag": "🇦🇷",
-    "team2": "Brazill",
-    "team2_flag": "🇧🇷",
-    "date": "",
-    "time": "",
-    "category": "Football",
-    "league": "World Cup",
-    "round": "Final",
-    "status": "UPCOMING",
-    "streams": [
-      {
-        "quality": "FHD",
-        "label": "HD Quality",
-        "url": "https:\/\/example.com\/stream1"
-      },
-      {
-        "quality": "HD",
-        "label": "Medium Quality",
-        "url": "https:\/\/example.com\/stream2"
-      },
-      {
-        "quality": "SD",
-        "label": "Mobile Quality",
-        "url": "https:\/\/example.com\/stream3"
-      }
-    ]
-  },
-  {
     "id": "14",
     "team1": "France",
     "team1_flag": "🇫🇷",
