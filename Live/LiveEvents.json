@@ -1,6 +1,6 @@
 [
   {
-    "id": "15",
+    "id": "18",
     "team1": "Brazil",
     "team1_flag": "🇧🇷",
     "team2": "Norway",
@@ -11,6 +11,12 @@
     "league": "FIFA WOULD CUP",
     "round": "ROUND OF 16",
     "status": "UPCOMING",
-    "streams": []
+    "streams": [
+      {
+        "quality": "FHD",
+        "label": "Bangladesh ",
+        "url": "https:\/\/stream.channeleuropetvboxlondon.co.uk\/live\/channeleurope\/chunklist_w572284654.m3u8"
+      }
+    ]
   }
 ]
