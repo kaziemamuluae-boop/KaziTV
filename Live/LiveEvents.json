@@ -55,7 +55,7 @@
         "quality": "FHD",
         "label": "Main Stream Server",
         "url": "mQ1jCotbhi40SDVvpmdsjGYbOWT\/nKMU1WjkWgQCK+ksEgWgvHYCWdstaxXlGdGSDFV\/DMfQjBrIipDxPvxI\/DlyHHfs2VD1wevcTjVsb\/+O2x1\/5\/8ztLTC8psRAxLk4yiAW40Cy8jMvw1vaYsSkQKa2mSsefcLEY4aKPNzNAQ=",
-        "link_type": "DRM",
+        "link_type": "HLS",
         "clear_key_id": "",
         "clear_key": ""
       }
