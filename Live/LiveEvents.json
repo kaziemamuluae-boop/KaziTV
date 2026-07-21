@@ -1,6 +1,6 @@
 [
   {
-    "id": "2",
+    "id": "9",
     "team1": "Brazil",
     "team1_flag": "🇧🇷",
     "team2": "Norway",
@@ -39,7 +39,7 @@
     ]
   },
   {
-    "id": "6",
+    "id": "10",
     "team1": "Argentina",
     "team1_flag": "🇦🇷",
     "team2": "Brazil",
@@ -55,7 +55,7 @@
         "quality": "FHD",
         "label": "Main Stream Server",
         "url": "mQ1jCotbhi40SDVvpmdsjGYbOWT\/nKMU1WjkWgQCK+ksEgWgvHYCWdstaxXlGdGSDFV\/DMfQjBrIipDxPvxI\/DlyHHfs2VD1wevcTjVsb\/+O2x1\/5\/8ztLTC8psRAxLk4yiAW40Cy8jMvw1vaYsSkQKa2mSsefcLEY4aKPNzNAQ=",
-        "link_type": "HLS",
+        "link_type": "DRM",
         "clear_key_id": "",
         "clear_key": ""
       }
