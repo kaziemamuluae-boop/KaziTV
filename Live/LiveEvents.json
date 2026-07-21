@@ -78,45 +78,6 @@
     ]
   },
   {
-    "id": "4",
-    "team1": "Brazil",
-    "team1_flag": "🇧🇷",
-    "team2": "Norway",
-    "team2_flag": "🇳🇴",
-    "date": "2026-07-06",
-    "time": "00:38",
-    "category": "Football",
-    "league": "FIFA WOULD CUP",
-    "round": "ROUND OF 16",
-    "status": "UPCOMING",
-    "streams": [
-      {
-        "quality": "FHD",
-        "label": "Bangladesh ",
-        "url": "Wd8TmDdBzVWiEsrgXrgL5Kvh3yPRXeDewWsYCgmuVypKNGT3V\/WGTX+kPRulEV3mPJNVFKB1eqPEdAcBeRCA8xzRwS7zYkDVXBUOngm9aoH5FMzQXKYeZsXImGimSxaF",
-        "link_type": "HLS",
-        "clear_key_id": "",
-        "clear_key": ""
-      },
-      {
-        "quality": "HD",
-        "label": "Deepto TV",
-        "url": "5mUqpiYrx4wO5CZ74ZbnU8B0R24v5rlyzLayyIDoZm41AVczJtZ\/XipBq6Y1mNjhJdNcTkGyGynFI3auWYYRug==",
-        "link_type": "HLS",
-        "clear_key_id": "",
-        "clear_key": ""
-      },
-      {
-        "quality": "FHD",
-        "label": "Movie Bangla",
-        "url": "Trk89rfzgDqyTo+0LGcTnmL1DlTHaBsgwWHs48iYP+FJOaOE6HXGbO5hwpRwiFFp",
-        "link_type": "HLS",
-        "clear_key_id": "",
-        "clear_key": ""
-      }
-    ]
-  },
-  {
     "id": "6",
     "team1": "Argentina",
     "team1_flag": "🇦🇷",
