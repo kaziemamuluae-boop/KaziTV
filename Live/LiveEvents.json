@@ -117,29 +117,6 @@
     ]
   },
   {
-    "id": "5",
-    "team1": "Argentina",
-    "team1_flag": "🇦🇷",
-    "team2": "Brazil",
-    "team2_flag": "🇧🇷",
-    "date": "2026-07-12",
-    "time": "18:00",
-    "category": "Football",
-    "league": "hgdfhh",
-    "round": "Regular Season",
-    "status": "LIVE",
-    "streams": [
-      {
-        "quality": "FHD",
-        "label": "Main Stream Server",
-        "url": "mQ1jCotbhi40SDVvpmdsjGYbOWT\/nKMU1WjkWgQCK+ksEgWgvHYCWdstaxXlGdGSDFV\/DMfQjBrIipDxPvxI\/DlyHHfs2VD1wevcTjVsb\/+O2x1\/5\/8ztLTC8psRAxLk4yiAW40Cy8jMvw1vaYsSkQKa2mSsefcLEY4aKPNzNAQ=",
-        "link_type": "HLS",
-        "clear_key_id": "",
-        "clear_key": ""
-      }
-    ]
-  },
-  {
     "id": "6",
     "team1": "Argentina",
     "team1_flag": "🇦🇷",
