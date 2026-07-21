@@ -15,7 +15,7 @@
       {
         "quality": "FHD",
         "label": "Bangladesh ",
-        "url": "Wd8TmDdBzVWiEsrgXrgL5Kvh3yPRXeDewWsYCgmuVypKNGT3V\/WGTX+kPRulEV3mPJNVFKB1eqPEdAcBeRCA8xzRwS7zYkDVXBUOngm9aoH5FMzQXKYeZsXImGimSxaF",
+        "url": "Wd8TmDdBzVWiEsrgXrgL5Kvh3yPRXeDewWsYCgmuVypKNGT3V/WGTX+kPRulEV3mPJNVFKB1eqPEdAcBeRCA8xzRwS7zYkDVXBUOngm9aoH5FMzQXKYeZsXImGimSxaF",
         "link_type": "HLS",
         "clear_key_id": "",
         "clear_key": ""
@@ -23,7 +23,7 @@
       {
         "quality": "HD",
         "label": "Deepto TV",
-        "url": "5mUqpiYrx4wO5CZ74ZbnU8B0R24v5rlyzLayyIDoZm41AVczJtZ\/XipBq6Y1mNjhJdNcTkGyGynFI3auWYYRug==",
+        "url": "5mUqpiYrx4wO5CZ74ZbnU8B0R24v5rlyzLayyIDoZm41AVczJtZ/XipBq6Y1mNjhJdNcTkGyGynFI3auWYYRug==",
         "link_type": "HLS",
         "clear_key_id": "",
         "clear_key": ""
@@ -54,7 +54,7 @@
       {
         "quality": "FHD",
         "label": "Bangladesh ",
-        "url": "Wd8TmDdBzVWiEsrgXrgL5Kvh3yPRXeDewWsYCgmuVypKNGT3V\/WGTX+kPRulEV3mPJNVFKB1eqPEdAcBeRCA8xzRwS7zYkDVXBUOngm9aoH5FMzQXKYeZsXImGimSxaF",
+        "url": "Wd8TmDdBzVWiEsrgXrgL5Kvh3yPRXeDewWsYCgmuVypKNGT3V/WGTX+kPRulEV3mPJNVFKB1eqPEdAcBeRCA8xzRwS7zYkDVXBUOngm9aoH5FMzQXKYeZsXImGimSxaF",
         "link_type": "HLS",
         "clear_key_id": "",
         "clear_key": ""
@@ -62,7 +62,7 @@
       {
         "quality": "HD",
         "label": "Deepto TV",
-        "url": "5mUqpiYrx4wO5CZ74ZbnU8B0R24v5rlyzLayyIDoZm41AVczJtZ\/XipBq6Y1mNjhJdNcTkGyGynFI3auWYYRug==",
+        "url": "5mUqpiYrx4wO5CZ74ZbnU8B0R24v5rlyzLayyIDoZm41AVczJtZ/XipBq6Y1mNjhJdNcTkGyGynFI3auWYYRug==",
         "link_type": "HLS",
         "clear_key_id": "",
         "clear_key": ""
@@ -79,24 +79,21 @@
   },
   {
     "id": "3",
-    "team1": "aaaa",
-    "team1_flag": "aaaa",
-    "team2": "aaaaa",
-    "team2_flag": "ggggg",
+    "team1": "Argentina",
+    "team1_flag": "🇦🇷",
+    "team2": "Brazil",
+    "team2_flag": "🇧🇷",
+    "status": "LIVE",
     "date": "2026-07-12",
     "time": "18:00",
     "category": "Football",
     "league": "hgdfhh",
     "round": "Regular Season",
-    "status": "LIVE",
     "streams": [
       {
         "quality": "FHD",
         "label": "Main Stream Server",
-        "url": "mQ1jCotbhi40SDVvpmdsjGYbOWT\/nKMU1WjkWgQCK+ksEgWgvHYCWdstaxXlGdGSDFV\/DMfQjBrIipDxPvxI\/DlyHHfs2VD1wevcTjVsb\/+O2x1\/5\/8ztLTC8psRAxLk4yiAW40Cy8jMvw1vaYsSkQKa2mSsefcLEY4aKPNzNAQ=",
-        "link_type": "DRM",
-        "clear_key_id": "zWj4HL3psv3T4XXJU546r1PP7z8xFKbYGYORJC072XzlxKKi+9RVVja4KxvZqibI",
-        "clear_key": "5eByjPHXqk0x5T8jBj+FPKTZ42CKi3IIYCwWRbyXpXxxvI7JnaJD5hfMPAciTjy\/"
+        "url": "mQ1jCotbhi40SDVvpmdsjGYbOWT/nKMU1WjkWgQCK+ksEgWgvHYCWdstaxXlGdGSDFV/DMfQjBrIipDxPvxI/DlyHHfs2VD1wevcTjVsb/+O2x1/5/8ztLTC8psRAxLk4yiAW40Cy8jMvw1vaYsSkQKa2mSsefcLEY4aKPNzNAQ="
       }
     ]
   }
